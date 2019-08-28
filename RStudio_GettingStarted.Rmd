@@ -1,0 +1,83 @@
+---
+title: "RStudio Jumpstart"
+author: "Catlin"
+date: "8/28/2019"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+  ioslides_presentation: default
+  pdf_document: default
+  slidy_presentation: default
+---
+
+# Hello, RStudio!
+
+## Python or R?
+
+## Code vs. GUI
+
+Reproducibility!
+
+## TidyVerse or baseR?
+
+* We'll emphasize the Tidyverse packages.
+* You'll want to learn both, since you'll see a lot of helpful base R code (and you may need to maintain code from a base R project).  Examples of important baseR code:  apply family of functions.
+* For every TidyVerse package, there is usually at least one excellent alternative.  Examples:  datatable instead of dplyr; leaflet instead of ggplot2
+
+## What are the different output formats?
+
+Note that generating .PDFs (as well as latex) may require you to install latex onto your machine.
+
+You can hide the code (one way to create basic dashboards; see also flexdashboard package), or hide the output.  There are many ways to make the output better looking (e.g. kable package).  If you're comfortable with .CSS, you can even create branded reports.
+
+## How does the r setup file work?
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("tidyverse")
+library(tidyverse)  ## loads many but not all "tidyverse" packages
+```
+
+## Which version of R and RStudio?
+
+How would I find out how to do this.  I almost always start with googling stackoverflow for my R questions.
+
+```{r}
+R.Version()
+```
+
+## How do I learn more about a specific R Package?
+
+R packages may contain code, data, or both.  Many packages also include (sometimes extremely) helpful vignettes.
+
+ctrl-alt-i or code-insert-chunk are two ways to add code block
+
+```{r}
+data(package = 'ggplot2')
+vignette(package = 'ggplot2')
+vignette(package = 'ggplot2', "extending-ggplot2")
+```
+
+## How do I generate latex?
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+You can also create inline latex with single dollar signs like this $\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$.  Nice!
+
+Remember that you may need to install latex (one time) on your Mac or PC.
+
+## Where do I go to learn more about RStudio and RMarkdown?
+
+Take a look at chapters 21 and chapters 23 in R for Data Science.
+
+https://www.rstudio.com has a lot of in-depth videos and cheat sheets.  See also CheatSheets sub-menu under the RStudio help menu.
+
+![R Markdown Cheatsheets](https://raw.githubusercontent.com/acatlin/DATA607/master/rstudiocheatsheets.jpg)
+
+
+* Note that with GitHub, sometimes you need to work with the raw version of the file for it to render correctly!
+* What effect does your code have on your analysis's *reproduciblity* if you reference files on your local machine?
+
+
